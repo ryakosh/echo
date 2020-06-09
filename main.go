@@ -31,8 +31,8 @@ func echo(c *gin.Context) {
 		},
 		Response: Response{
 			Status: Status{
-				Code:    c.Writer.Status(),
-				Message: http.StatusText(c.Writer.Status()),
+				Code: c.Writer.Status(),
+				Text: http.StatusText(c.Writer.Status()),
 			},
 			Headers: c.Writer.Header(),
 		},
