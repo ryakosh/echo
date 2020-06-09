@@ -17,6 +17,7 @@ type Request struct {
 	Method  string      `json:"method"`
 	URL     URL         `json:"url"`
 	Headers http.Header `json:"headers"`
+	Body    Body        `json:"body"`
 }
 
 // Response stores information about response's status and headers
@@ -36,6 +37,12 @@ type URL struct {
 type Query struct {
 	Raw    string     `json:"raw"`
 	Parsed url.Values `json:"parsed"`
+}
+
+// Body stores information about request's body, including it's parsed form
+type Body struct {
+	Raw    string                 `json:"raw"`
+	Parsed map[string]interface{} `json:"parsed"`
 }
 
 // Status stores information about response's status code and text
